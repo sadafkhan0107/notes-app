@@ -1,0 +1,14 @@
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    background-color: aqua;
+}
+.nav-container >div{
+    padding: 10px;
+    color: black;
+}
+.nav-container >div {
+    text-decoration: none;
+}

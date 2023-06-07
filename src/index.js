@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { ArchiveProvider } from './context/archive-context/archive-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <ArchiveProvider>
+      <App />
+    </ArchiveProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
