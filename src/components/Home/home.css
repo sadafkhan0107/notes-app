@@ -5,6 +5,16 @@
     margin: 0;
     padding: 0;
   }
+  .notes{
+    width: 100vw;
+    height: 100vh;
+  }
+  .app{
+    display: flex;
+  }
+  .home-body{
+    margin-left: 1rem;
+  }
    .input-box{
     display: flex;
     flex-direction: column;
@@ -30,7 +40,7 @@
     border-radius: 0 0 4px 4px;
   }
  .unPin-note-containers{
-    width: 200px;
+    width: 300px;
     height: 100px;
     border: 1px solid gray;
     margin: 30px;
@@ -42,7 +52,7 @@
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
   }
   .pin-note-containers{
-    width: 200px;
+    width: 300px;
     height: 100px;
     border: 1px solid gray;
     padding: 10px;
@@ -55,10 +65,11 @@
   }
   .display-note-container{
     display: flex;
+    flex-wrap: wrap;
   }
   .add-btn{
     font-size: 20px;
-    background-color: blueviolet;
+    background-color: #57a87c;
     border: none;
     width: 30px;
     height: 30px;
@@ -66,7 +77,7 @@
     position:absolute;
     right: 0;
     bottom: 0;
-    margin: 5px;
+    margin: 3px;
     cursor: pointer;
   }
   .del-btn , .pin-btn , .archive-btn{
@@ -92,5 +103,8 @@
   .note-title-container{
     border-bottom: 1px solid;
     font-weight: 500;
+    padding: 5px;
+  }
+  .note-note-container{
     padding: 5px;
   }
