@@ -1,31 +1,37 @@
 import './Archive.css'
-import { Navbar } from '../Navbar/Navbar';
-import { useArchive } from '../../context/archive-context';
-import { Aside } from '../Aside/Aside';
-import { useNotes } from '../../context/notes-context';
-import { useBin } from '../../context/bin-context';
+import '../../pages/Home/home.css';
+import {Navbar, Aside} from '../../components';
+import { useArchive, useNotes, useBin } from '../../context';
+
 export const Archive = () => {
    const {archiveNotes, setArchiveNotes} = useArchive();
    // console.log(archiveNotes);
    const {notesArray, setNotesArray} = useNotes()
    const {binNotes, setBinNotes} = useBin()
    const handleUnArchiveClick = (id) =>{
-      const updateNotesArr = archiveNotes.filter((note) => note.id === id)
-      setNotesArray([...notesArray, ...updateNotesArr])
+      let updateNotesArr = archiveNotes.filter((note) => note.id === id)
+      updateNotesArr = [...notesArray, ...updateNotesArr]
+      setNotesArray(updateNotesArr)
+      localStorage.setItem('notes', JSON.stringify(updateNotesArr))
       const updatedArchiveArr = archiveNotes.filter((note) => note.id !== id)
       setArchiveNotes(updatedArchiveArr)
+      localStorage.setItem('archive-notes', JSON.stringify(updatedArchiveArr))
    }
    const handleArchiveDelClick = (id) =>{
-      const updatedBin = archiveNotes.filter((note) => note.id === id)
-      setBinNotes([...binNotes, ...updatedBin])
+      let updatedBin = archiveNotes.filter((note) => note.id === id)
+      updatedBin = [...binNotes, ...updatedBin]
+      setBinNotes(updatedBin)
+      localStorage.setItem('bin-notes', JSON.stringify(updatedBin))
       const updatedArchiveArr = archiveNotes.filter((note) => note.id !== id)
       setArchiveNotes(updatedArchiveArr)
+      localStorage.setItem('archive-notes', JSON.stringify(updatedArchiveArr))
    }
  return(
     <>
     <Navbar />
     <div className='archive-app'>
     <Aside />
+    <main className='main'>
     <div className='archive-body'>
     <h2>Archived Notes</h2>
     <div className='archive-notes'> 
@@ -52,6 +58,7 @@ export const Archive = () => {
     })}
     </div>
     </div>
+    </main>
     </div>
     </>
    

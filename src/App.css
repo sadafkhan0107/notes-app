@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #2563eb;
+    --text-color-primary: #020617;
+    --background-color: #fafaf9;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--background-color);
+}
+.d-flex {
+    display:flex;
+}

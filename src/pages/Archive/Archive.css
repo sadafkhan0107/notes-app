@@ -9,7 +9,6 @@
 }
 .archive-note-containers{
   width: 300px;
-  height: 100px;
   border: 1px solid gray;
   margin: 30px;
   padding: 10px;
@@ -35,7 +34,5 @@
     right: 0;
   }
   .down-btn{
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    margin-left: auto;
   }

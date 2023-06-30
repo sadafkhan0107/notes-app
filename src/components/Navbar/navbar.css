@@ -1,16 +1,26 @@
-.nav-container{
+.header{
     width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 4rem;
-    background-color: #a85783;
+    padding: 1rem;
+    background-color: var(--background-color);
+    position: fixed;
+    z-index: 2;
+    border-bottom: 1px solid #d1d5db;
 }
-.nav-container >div{
-    padding: 1rem 3rem;
-    color: black;
+
+.logo{
+   width: 3rem;
+   height: 3rem;
+   border-radius: 50%;
 }
+
+.heading-1{
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
 .link{
     text-decoration: none;
-    color: black;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }

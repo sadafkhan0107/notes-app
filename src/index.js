@@ -7,17 +7,20 @@ import { BrowserRouter } from 'react-router-dom';
 import { ArchiveProvider } from './context/archive-context';
 import { NotesProvider } from './context/notes-context';
 import { BinProvider } from './context/bin-context';
+import { PinProvider } from './context/pinNotes-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
    <BrowserRouter>
     <NotesProvider>
-      <BinProvider>
-        <ArchiveProvider>
-          <App />
-        </ArchiveProvider>
-      </BinProvider>
+     <ArchiveProvider>
+       <PinProvider>
+         <BinProvider>
+            <App />
+         </BinProvider>
+        </PinProvider>
+      </ArchiveProvider>
     </NotesProvider>
    </BrowserRouter>
   </React.StrictMode>

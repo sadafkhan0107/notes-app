@@ -5,7 +5,7 @@ const initialNotes = [
     {
       id: 1,
       title: "Bir - trip",
-      note: "Mountain trip with sahil"
+      note: "Mountain trip solo"
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const initialNotes = [
   ]
 
 const NotesProvider =({children}) => {
-    const [notesArray, setNotesArray] = useState(initialNotes)
+    const [notesArray, setNotesArray] = useState(JSON.parse(localStorage.getItem("notes")) || initialNotes)
     return ( 
     <NotesContext.Provider value={{notesArray,setNotesArray}}>
         {children}

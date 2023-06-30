@@ -1,75 +1,68 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
-
-*{
-    margin: 0;
-    padding: 0;
-  }
-  .notes{
-    width: 100vw;
-    height: 100vh;
-  }
-  .app{
+.app{
     display: flex;
   }
-  .home-body{
-    margin-left: 1rem;
+  .main{
+    margin-left: 12rem;
+    margin-top: 7rem;
+    padding-left: 3rem;
+  }
+
+  .other-notes {
+    margin-top: 2rem;
+  }
+  .note-input-container{
+    align-items: center;
+    justify-content: center;
   }
    .input-box{
-    display: flex;
+    width: 400px;
     flex-direction: column;
-    max-width: max-content;
-    margin: auto;
     position: relative;
   }
   .title-box{
-    width: 400px;
+    width: 100%;
     margin-top: 10px;
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid var(--text-color-primary);
     border-bottom: 0px;
     border-radius: 4px 4px 0 0;
   }
 
   .note-box{
-    width: 400px;
+    width: 100%;
     padding: 5px;
     height: 100px;
-    border: 1px solid black;
+    border: 1px solid var(--text-color-primary);
     border-top: 0px;
     border-radius: 0 0 4px 4px;
   }
- .unPin-note-containers{
+
+  .sub-title{
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
+ .note-containers{
     width: 300px;
-    height: 100px;
     border: 1px solid gray;
-    margin: 30px;
     padding: 10px;
     border-radius: 8px;
     position: relative;
   }
-  .unPin-note-containers:hover{
+  .note-containers:hover {
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
   }
-  .pin-note-containers{
-    width: 300px;
-    height: 100px;
-    border: 1px solid gray;
-    padding: 10px;
-    margin: 30px;
-    border-radius: 8px;
-    position: relative;
-  }
-  .pin-note-containers:hover{
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
-  }
+
   .display-note-container{
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
   }
   .add-btn{
     font-size: 20px;
-    background-color: #57a87c;
+    background-color: #2563eb;
+    color: var(--background-color);
     border: none;
     width: 30px;
     height: 30px;
@@ -96,9 +89,7 @@
     right: 0;
   }
   .down-btn{
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    margin-left: auto;
   }
   .note-title-container{
     border-bottom: 1px solid;
