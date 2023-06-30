@@ -2,6 +2,7 @@
     display: flex;
   }
   .main{
+    width: 100vw;
     margin-left: 12rem;
     margin-top: 7rem;
     padding-left: 3rem;
@@ -35,6 +36,7 @@
     border: 1px solid var(--text-color-primary);
     border-top: 0px;
     border-radius: 0 0 4px 4px;
+    resize: none;
   }
 
   .sub-title{
