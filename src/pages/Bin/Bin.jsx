@@ -27,7 +27,7 @@ export const Bin = () => {
                 <Aside />
                 <main className='main'>
                     <div className='deleted-notes'>
-                        <h1> Deleted Notes</h1>
+                        {binNotes?.length > 0 && <h1> Deleted Notes</h1>}
                         <div className="display-note-container">
                             {binNotes?.length > 0 ? binNotes.map((note) => {
                                 return(
@@ -51,7 +51,7 @@ export const Bin = () => {
                                             </div> 
                                         </div>
                                 )
-                            }) : <p className='no-notes'>No notes in Bin</p>}
+                            }) : <p className='no-notes'>No notes found in the bin</p>}
                         </div>
                     </div>
                </main>

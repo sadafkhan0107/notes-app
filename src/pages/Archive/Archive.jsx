@@ -33,7 +33,7 @@ export const Archive = () => {
     <Aside />
     <main className='main'>
     <div className='archive-body'>
-    <h2>Archived Notes</h2>
+    {archiveNotes?.length > 0 && <h2>Archived Notes</h2>} 
     <div className='archive-notes'> 
     {archiveNotes?.length > 0 ? archiveNotes.map((note) => {
       return(
@@ -55,7 +55,7 @@ export const Archive = () => {
          </div> 
           </div>
       )
-    }) : <p className='no-notes'>No notes archived</p>}
+    }) : <p className='no-notes'>No notes found in archive</p>}
     </div>
     </div>
     </main>
