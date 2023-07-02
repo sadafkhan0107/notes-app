@@ -35,16 +35,11 @@ export const Archive = () => {
     <div className='archive-body'>
     <h2>Archived Notes</h2>
     <div className='archive-notes'> 
-    {archiveNotes?.length > 0 && archiveNotes.map((note) => {
+    {archiveNotes?.length > 0 ? archiveNotes.map((note) => {
       return(
          <div className="archive-note-containers">
             <div className="note-title-container d-flex"> 
                <span className="note-title"> {note.title} </span>
-               <div className='left-auto'>
-                  <button className="cta-btn top-btn">
-                     <span className="material-icons-outlined">push_pin</span>
-                  </button>
-               </div>
             </div>
 
             <div className="note-note-container">{note.note}</div>
@@ -60,7 +55,7 @@ export const Archive = () => {
          </div> 
           </div>
       )
-    })}
+    }) : <p className='no-notes'>No notes archived</p>}
     </div>
     </div>
     </main>

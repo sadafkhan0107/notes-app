@@ -23,7 +23,7 @@ export const Important = () => {
                 <main className="main">
                   <ImportantInput />
                   <div className='important-notes'>
-                    <h1> Important Notes</h1>
+                    {importantNotes?.length > 0 && <h1> Important Notes</h1>}
                     <div className="display-note-container">
                     {importantNotes?.length > 0 && importantNotes.map((note) => {
                         return(
