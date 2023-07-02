@@ -1,6 +1,7 @@
 .app{
     display: flex;
   }
+
   .main{
     width: 100vw;
     margin-left: 12rem;
@@ -19,6 +20,7 @@
     width: 400px;
     flex-direction: column;
     position: relative;
+    margin-bottom: 1rem;
   }
   .title-box{
     width: 100%;
@@ -41,7 +43,6 @@
 
   .sub-title{
     margin-top: 1rem;
-    margin-left: 1rem;
   }
 
  .note-containers{
@@ -50,6 +51,7 @@
     padding: 10px;
     border-radius: 8px;
     position: relative;
+    align-self: flex-start;
   }
   .note-containers:hover {
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
@@ -75,24 +77,15 @@
     margin: 3px;
     cursor: pointer;
   }
-  .del-btn , .pin-btn , .archive-btn{
+  .cta-btn{
     background: transparent;
-    padding: 8px;
     border: none;
-    margin-left: auto;
     cursor: pointer;
   }
   .input:focus {
     outline: none;
   }
-  .top-btn{
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .down-btn{
-    margin-left: auto;
-  }
+ 
   .note-title-container{
     border-bottom: 1px solid;
     font-weight: 500;
@@ -100,4 +93,24 @@
   }
   .note-note-container{
     padding: 5px;
+  }
+  .imp-btn{
+    padding: 6px 16px;
+    margin-top: 16px;
+    border: none;
+    border-radius: 1rem;
+    background-color: lightgrey;
+    cursor: pointer;
+  }
+  .left-auto{
+    margin-left: auto;
+  }
+  .gap{
+    gap: 8px;
+  }
+  .down-btn{
+    padding-top: 12px;
+  }
+  .end{
+    align-items: end;
   }

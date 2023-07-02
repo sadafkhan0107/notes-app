@@ -4,23 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { ArchiveProvider } from './context/archive-context';
-import { NotesProvider } from './context/notes-context';
-import { BinProvider } from './context/bin-context';
-import { PinProvider } from './context/pinNotes-context';
+import { ArchiveProvider, NotesProvider, BinProvider, PinProvider, ImportantProvider } from './context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
    <BrowserRouter>
     <NotesProvider>
-     <ArchiveProvider>
-       <PinProvider>
-         <BinProvider>
-            <App />
-         </BinProvider>
-        </PinProvider>
-      </ArchiveProvider>
+      <ImportantProvider>
+      <ArchiveProvider>
+        <PinProvider>
+            <BinProvider>
+                <App />
+            </BinProvider>
+          </PinProvider>
+        </ArchiveProvider>
+      </ImportantProvider>
     </NotesProvider>
    </BrowserRouter>
   </React.StrictMode>

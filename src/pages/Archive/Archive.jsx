@@ -38,20 +38,25 @@ export const Archive = () => {
     {archiveNotes?.length > 0 && archiveNotes.map((note) => {
       return(
          <div className="archive-note-containers">
-            <div className="note-title-container"> <span className="note-title"> {note.title} </span>
-            <button className="pin-btn top-btn">
-               <span className="material-icons-outlined">push_pin</span>
-            </button>
+            <div className="note-title-container d-flex"> 
+               <span className="note-title"> {note.title} </span>
+               <div className='left-auto'>
+                  <button className="cta-btn top-btn">
+                     <span className="material-icons-outlined">push_pin</span>
+                  </button>
+               </div>
             </div>
 
             <div className="note-note-container">{note.note}</div>
-            <div className="down-btn">
-               <button className='archive-btn' onClick={() => handleUnArchiveClick(note.id)}>
-                  <span className="material-icons">archive</span>
-               </button>
-               <button className='del-btn' onClick={() => handleArchiveDelClick(note.id)}> 
-                  <span className="material-icons-outlined">delete </span>
-               </button>
+            <div className="down-btn d-flex">
+               <div className='left-auto d-flex  gap'>
+                  <button className='cta-btn' onClick={() => handleUnArchiveClick(note.id)}>
+                     <span className="material-icons">archive</span>
+                  </button>
+                  <button className='cta-btn' onClick={() => handleArchiveDelClick(note.id)}> 
+                     <span className="material-icons-outlined">delete </span>
+                  </button>
+               </div>
          </div> 
           </div>
       )

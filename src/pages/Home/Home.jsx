@@ -9,8 +9,8 @@ export const Home = () =>{
         <Aside />
         <main className="main">
           <Input />
-          <OtherNotes />
           <PinnedNotes />
+          <OtherNotes />
         </main>
       </div> 
     </>

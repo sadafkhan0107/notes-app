@@ -35,29 +35,31 @@ export const PinnedNotes = () => {
         localStorage.setItem('pin-notes', JSON.stringify(updatedArr))
       }
     return(
-        <div>
-            {/* Pinned Notes */}
-            {/* {console.log(pinNotes?.length)} */}
+        <div className='other-notes'>
             {pinNotes?.length > 0 ? <h3 className="sub-title">Pinned Notes</h3> : <></>}
             <div className='display-note-container'>
                     {pinNotes?.length > 0 && pinNotes?.map((note) => {
                     return (
                         <div className="note-containers">
-                            <div className="note-title-container">
+                            <div className="note-title-container d-flex">
                                 <span>{note.title} </span> 
-                                <button className="pin-btn top-btn" onClick={() => handleUnPinClick(note.id)}>
-                                    <span className="material-icons">push_pin</span>
-                                </button> 
+                                <div className='left-auto'>
+                                    <button className="cta-btn top-btn" onClick={() => handleUnPinClick(note.id)}>
+                                        <span className="material-icons">push_pin</span>
+                                    </button> 
+                                </div>
                             </div>
                             <div className="note-note-container">
                                     {note.note}
-                                    <div className="down-btn">
-                                        <button className='archive-btn' onClick={() => handlePinArchiveClick(note.id)}>
-                                            <span className="material-icons-outlined">archive</span>
-                                        </button>
-                                        <button className='del-btn' onClick={() => handlePinnedDelClick(note.id)}>
-                                            <span className="material-icons-outlined">delete </span>
-                                        </button>
+                                    <div className="down-btn d-flex">
+                                        <div className='left-auto d-flex gap'>
+                                            <button className='cta-btn' onClick={() => handlePinArchiveClick(note.id)}>
+                                                <span className="material-icons-outlined">archive</span>
+                                            </button>
+                                            <button className='cta-btn' onClick={() => handlePinnedDelClick(note.id)}>
+                                                <span className="material-icons-outlined">delete </span>
+                                            </button>
+                                        </div>
                                     </div>
                             </div>
                     </div>

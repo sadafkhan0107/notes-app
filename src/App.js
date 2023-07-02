@@ -1,5 +1,5 @@
 import './App.css';
-import {Archive, Home, Bin} from './pages';
+import {Archive, Home, Bin, Important} from './pages';
 import { Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path= '/archive' element = {<Archive />}/>
+        <Route path='/important' element = {<Important />} />
         <Route path='/bin' element= {<Bin />} />
       </Routes>
     </div>
