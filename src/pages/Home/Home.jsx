@@ -1,5 +1,5 @@
 import './home.css';
-import { Aside,Navbar, Input, OtherNotes, PinnedNotes } from '../../components';
+import { Aside,Navbar, Input, OtherNotes, PinnedNotes,Footer } from '../../components';
 
 export const Home = () =>{
   return (
@@ -13,6 +13,7 @@ export const Home = () =>{
           <OtherNotes />
         </main>
       </div> 
+      <Footer />
     </>
   );
 }

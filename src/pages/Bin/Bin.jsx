@@ -15,6 +15,11 @@ export const Bin = () => {
         setBinNotes(updatedBin)
         localStorage.setItem('bin-notes', JSON.stringify(updatedBin))
     }
+    const handleDelete = (id) => {
+        const updatedBin = binNotes.filter((note) => note.id !== id)
+        setBinNotes(updatedBin)
+        localStorage.setItem('bin-notes', JSON.stringify(updatedBin))
+    }
     return(
         <div className='bin-app'>
             <Navbar />
@@ -39,7 +44,7 @@ export const Bin = () => {
                                     <div className="note-note-container">{note.note}</div>
                                             <div className="down-btn d-flex">
                                                 <div className='left-auto d-flex gap'>
-                                                    <button className='cta-btn'> 
+                                                    <button className='cta-btn' onClick={() => handleDelete(note.id)}> 
                                                         <span className="material-icons-outlined">delete </span>
                                                     </button>
                                                 </div>

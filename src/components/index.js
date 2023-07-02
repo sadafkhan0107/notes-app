@@ -4,3 +4,4 @@ export {ImportantInput} from './Input/ImportantInput';
 export {Navbar} from './Navbar/Navbar';
 export {OtherNotes} from './OtherNotes/OtherNotes';
 export {PinnedNotes} from './PinnedNotes/PinnedNotes';
+export { Footer } from './Footer/Footer';
