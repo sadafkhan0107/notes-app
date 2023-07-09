@@ -26,8 +26,9 @@ export const PinnedNotes = () => {
         localStorage.setItem('pin-notes', JSON.stringify(updatePinnedArr))
       }
     const handlePinnedDelClick = (id) => {
-        let delArr = pinNotes.filter((note) => note.id === id)
+        let delArr = pinNotes.filter((note) => note.id === id).map((item) => ({...item, createdAt : new Date()}))
         delArr = [...binNotes, ...delArr]
+        // console.log(delArr)
         setBinNotes(delArr)
         localStorage.setItem('bin-notes',JSON.stringify(delArr))
         const updatedArr = pinNotes.filter((note) => note.id !== id)

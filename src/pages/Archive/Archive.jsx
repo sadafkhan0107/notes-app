@@ -18,7 +18,7 @@ export const Archive = () => {
       localStorage.setItem('archive-notes', JSON.stringify(updatedArchiveArr))
    }
    const handleArchiveDelClick = (id) =>{
-      let updatedBin = archiveNotes.filter((note) => note.id === id)
+      let updatedBin = archiveNotes.filter((note) => note.id === id).map((item) => ({...item, createdAt : new Date()}))
       updatedBin = [...binNotes, ...updatedBin]
       setBinNotes(updatedBin)
       localStorage.setItem('bin-notes', JSON.stringify(updatedBin))

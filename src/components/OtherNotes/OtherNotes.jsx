@@ -28,7 +28,7 @@ localStorage.setItem("notes", JSON.stringify(updatedArr));
 }
 
 const handleNoteDel = (id) =>{
-let delArr = notesArray.filter((note) => note.id === id)
+let delArr = notesArray.filter((note) => note.id === id).map((item) => ({...item, createdAt : new Date()}))
 delArr = [...binNotes, ...delArr]
 setBinNotes(delArr);
 localStorage.setItem("del-notes", JSON.stringify(delArr));

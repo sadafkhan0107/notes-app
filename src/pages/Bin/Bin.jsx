@@ -2,10 +2,29 @@ import './Bin.css';
 import '../../pages/Home/home.css';
 import { useBin,useNotes } from "../../context";
 import {Navbar, Aside} from '../../components';
+import { useEffect } from 'react';
 
 export const Bin = () => {
     const { binNotes,setBinNotes} = useBin();
     const {notesArray, setNotesArray} = useNotes();
+
+        useEffect(() => {
+            let timerId 
+            if(binNotes?.length > 0){
+                timerId = setInterval(() => {
+                    // let currentDate = new Date()
+                   const updatedBinNotes = binNotes.filter((item) => !(new Date().getTime() - new Date(item.createdAt).getTime() > (7 * 24 * 60 * 60 * 1000)))
+                   console.log(updatedBinNotes)
+                   setBinNotes(updatedBinNotes)
+                   localStorage.setItem('bin-notes', JSON.stringify(updatedBinNotes))
+                }, 1000)
+            }
+            return () => {
+                clearInterval(timerId)
+            }
+    }, [])
+  
+    console.log(binNotes)
     const handleRestoreClick = (id) => {
         let updatedArr = binNotes.filter((note) => note.id === id)
         updatedArr = [...notesArray, ...updatedArr]

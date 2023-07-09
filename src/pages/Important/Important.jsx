@@ -1,10 +1,11 @@
 import '../Home/home.css';
 import { ImportantInput, Navbar, Aside} from "../../components";
-import { useImportant,useNotes } from '../../context';
+import { useImportant,useNotes,useBin } from '../../context';
 
 export const Important = () => {
     const {importantNotes, setImportantNotes} = useImportant();
     const {notesArray, setNotesArray} = useNotes();
+    const {binNotes, setBinNotes} = useBin();
     
     const handleImpClick= (id) => {
         let updateArr = importantNotes.filter((note) => note.id === id)
@@ -15,6 +16,16 @@ export const Important = () => {
         setImportantNotes(updatedImpArr)
         localStorage.setItem('important-notes', JSON.stringify(updatedImpArr))
     }
+    const handleDelClick = (id) =>{
+        let updatedBin = importantNotes.filter((note) => note.id === id).map((item) => ({...item, createdAt : new Date()}))
+        updatedBin = [...binNotes, ...updatedBin]
+        setBinNotes(updatedBin)
+        localStorage.setItem('bin-notes', JSON.stringify(updatedBin))
+        const updatedImpArr = importantNotes.filter((note) => note.id !== id)
+        setImportantNotes(updatedImpArr)
+        localStorage.setItem('important-notes', JSON.stringify(updatedImpArr))
+     }
+
     return (
         <>
          <Navbar />
@@ -38,7 +49,7 @@ export const Important = () => {
                                         </div>
                                         <div className='left-auto d-flex end'>
                                             <button className='cta-btn'> 
-                                             <span className="material-icons-outlined">delete </span>
+                                             <span className="material-icons-outlined" onClick={() => handleDelClick(note.id)}>delete </span>
                                             </button>
                                         </div>
                                   </div> 
