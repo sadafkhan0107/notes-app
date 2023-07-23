@@ -1,7 +1,7 @@
 
-# Hyper Notes - Note taking app
+# Hyper Notes - Note-taking app
 
-HyperNotes is a powerful and versatile note-taking app designed to help you stay organized and productive. Whether you're a student, professional, or simply someone who loves jotting down ideas, HyperNotes has got you covered.
+HyperNotes is a powerful and versatile note-taking app designed to help you stay organized and productive. Whether you're a student, a professional, or someone who loves jotting down ideas, HyperNotes has covered you.
 
 
 
@@ -12,6 +12,7 @@ HyperNotes is a powerful and versatile note-taking app designed to help you stay
 - Unpinned Notes - Unpinning notes removes them from the top of the list, allowing you to maintain a clean and organized workspace.
 - Archive Notes - Archive notes that are no longer immediately relevant, but still worth keeping for future reference.
 - Important Notes - Highlight and prioritize critical notes using the important notes feature. Mark notes as important to ensure they receive the attention they deserve.
+- Delete Notes - Move unwanted notes to the bin, which will automatically be deleted in 7 days.
 
 
 
