@@ -22,7 +22,7 @@ export const Bin = () => {
             return () => {
                 clearInterval(timerId)
             }
-    }, [])
+    }, [binNotes])
   
     console.log(binNotes)
     const handleRestoreClick = (id) => {
